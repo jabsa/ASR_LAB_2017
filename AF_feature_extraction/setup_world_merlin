@@ -104,10 +104,11 @@ then
     CLUSTERGENDIR=$FESTVOXDIR/src/clustergen
 fi
 
-if [ "$WERLINDIR" = "" ]
+if [ "$AFDIR" = "" ]
 then
-    WERLINDIR=$FESTVOXDIR/src/world_merlin
+    AFDIR=$FESTVOXDIR/src/af_feat
 fi
+
 
 
 if [ "$FESTVOXTEMPLATEDIR" = "" ]
@@ -179,22 +180,23 @@ then
 else
    cp -p $CLUSTERGENDIR/statedur.feats festival/dur/etc
 fi
-cp -p $WERLINDIR/clustergen_world.scm festvox/clustergen.scm
+cp -p $AFDIR/clustergen_world.scm festvox/clustergen.scm
 # Added Aug 20th 2011 to allow more localized building
 # this used to always be used from the source directory
-cp -p $WERLINDIR/clustergen_build_world.scm festvox/clustergen_build.scm
-cp -p $WERLINDIR/do_clustergen bin
-cp -p $WERLINDIR/AF_binmapper.py bin
-cp -p $WERLINDIR/binary_io.py bin
-cp -p $WERLINDIR/make_AF_bin_feats.sh bin
-cp -p $WERLINDIR/make_world_bin_feats.sh bin
-cp -p $WERLINDIR/make_voicing bin
-cp -p $WERLINDIR/build_merlin_world_voice bin
-cp -p $WERLINDIR/dump_AF_world_feats bin
-cp -p $WERLINDIR/extract_features_for_merlin.sh bin
-cp -p $WERLINDIR/get_AF_feats.sh bin
-cp -p $WERLINDIR/repeat_vector.py bin
-cp -p $WERLINDIR/featnames etc
+cp -p $AFDIR/clustergen_build_world.scm festvox/clustergen_build.scm
+cp -p $AFDIR/do_clustergen bin
+cp -p $AFDIR/AF_binmapper.py bin
+cp -p $AFDIR/binary_io.py bin
+cp -p $AFDIR/make_AF_bin_feats.sh bin
+cp -p $AFDIR/make_world_bin_feats.sh bin
+cp -p $AFDIR/make_voicing bin
+cp -p $AFDIR/dump_AF_world_feats bin
+cp -p $AFDIR/extract_features_for_merlin.sh bin
+cp -p $AFDIR/get_AF_feats.sh bin
+cp -p $AFDIR/repeat_vector.py bin
+cp -p $AFDIR/acoustic_composition.py bin
+cp -pr $AFDIR/merlin_gen_scripts bin
+cp -p $AFDIR/featnames etc
 
 
 

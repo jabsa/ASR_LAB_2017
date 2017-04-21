@@ -1,12 +1,12 @@
 import sys
 import numpy
- 
+import os 
 
 def repeat_vec(filename):
     phone_lines=file('af_feats/' + filename + '.af').readlines()
     phone_num=0
     curr_phone=phone_lines[phone_num].strip().split()[0]
-   
+    
     for line in reversed(open('festival/coeffs/' + filename + '.feats').readlines()):
 	phone=line.strip().split()[0].split('_')[0]
 	print phone, curr_phone
@@ -28,4 +28,5 @@ def repeat_vec(filename):
 
 if __name__=="__main__":
     filename=sys.argv[1]
+    os.remove('af_feats/' + filename + '.faf')
     repeat_vec(filename)

@@ -55,8 +55,14 @@ PARALLEL=parallel
 echo "Dumping aligned linguistic and WORLD feats in festival/coeffs"
 ./bin/do_clustergen $PARALLEL dump_feat etc/txt.done.data
 
+echo "Dumping phone feats in af_feats with extension .af for uttwise and .faf for framewise"
+./bin/get_AF_feats.sh
+
 # Dump Binary feats
 echo "Converting dumped linguistic feats to binary in binary_af_feats"
-./bin/make_af_bin_feats.sh $type
+./bin/make_AF_bin_feats.sh $type
 echo "Converting dumped WORLD feats to binary in binary_af_feats/{MGC,BAP,LF0}"
 ./bin/make_world_bin_feats.sh
+
+#TO DO add composition
+#optionally add normalization also

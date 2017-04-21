@@ -3,7 +3,7 @@
 # top merlin directory
 
 # tools directory
-world=$FESTVOXDIR/src/world_merlin/WORLD
+world="bin/WORLD"
 sptk=$SPTKDIR/bin
 
 # input audio directory
