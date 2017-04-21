@@ -52,7 +52,7 @@ def make_binary(outdir, infile, phonefile):
                 #print "DEBUG: ", list_name, feat_list[feat],
                 final_list.extend(get_element(feat_list[feat], list_name))
             final_mat.append(final_list)
-            print(len(final_list))
+            #print(len(final_list))
             final_list=[]
         io_funcs.array_to_binary_file(final_mat, outfile)
     
@@ -60,8 +60,7 @@ def make_binary(outdir, infile, phonefile):
 
 def get_element(item, find_list):
     """Returns the item index in a list"""
-    #print(find_list[0]==item)
-    print(np.where(np.asarray(find_list) == item)[0][0])
+    #print(np.where(np.asarray(find_list) == item)[0][0])
     return list(one_hot(np.where(np.asarray(find_list)==item)[0][0], len(find_list)))
 
 def read_binary_file(filename, feature_dimension):

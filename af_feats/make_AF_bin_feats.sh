@@ -15,5 +15,5 @@ rm -rf ${TARGET_DIR}
     while read file
       do
         echo $file
-        python bin/af_binmapper.py $SOURCE_DIR/${file}.$ext ${TARGET_DIR} ${PHONELIST}
+        python bin/AF_binmapper.py $SOURCE_DIR/${file}.$ext ${TARGET_DIR} ${PHONELIST}
       done

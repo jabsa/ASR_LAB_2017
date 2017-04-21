@@ -38,4 +38,4 @@ for i in festival/coeffs/*.mcep;
         $SPTK_BINDIR/x2x +af tmp.bap > ${BAP_DIR}/${file}.bap
      rm tmp*
      done
-python acoustic_composition.py `pwd`
+python ./bin/acoustic_composition.py `pwd`

@@ -22,7 +22,7 @@ def do_acoustic_composition(main_path, n_output_dim=199):
     delta_win = [-0.5, 0.0, 0.5]
     acc_win = [1.0, -2.0, 1.0]
 
-    data_path=main_path + '/data/binary_af_feats/'
+    data_path=main_path + '/binary_af_feats/'
 
     all_list=main_path +'/etc/filelist'
     out_dimension_dict = { 'mgc' : 180,'lf0' : 3,'vuv' : 1,'bap' : 15}

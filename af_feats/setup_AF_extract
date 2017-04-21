@@ -192,8 +192,9 @@ cp -p $AFDIR/make_world_bin_feats.sh bin
 cp -p $AFDIR/make_voicing bin
 cp -p $AFDIR/dump_AF_world_feats bin
 cp -p $AFDIR/extract_features_for_merlin.sh bin
-cp -p $AFDIR/get_AF_feats.sh bin
-cp -p $AFDIR/repeat_feat.py bin
+cp -p $AFDIR/dump_AF.sh bin
+cp -p $AFDIR/get_AF_feats.py bin
+cp -p $AFDIR/check_faf.sh bin
 cp -p $AFDIR/acoustic_composition.py bin
 cp -pr $AFDIR/merlin_gen_scripts bin
 cp -p $AFDIR/featnames etc

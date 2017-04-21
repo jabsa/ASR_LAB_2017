@@ -8,6 +8,6 @@ $ESTDIR/../festival/examples/dumpfeats -relation Segment -feats etc/featnames fe
 cat etc/txt.done.data |awk '{print $2}' >etc/filelist
 for file in `cat etc/filelist`;
 do
-    python ./bin/remove_duplicate.py $file
-    python ./bin/repeat_feat.py $file
+    python ./bin/get_AF_feats.py $file
 done
+./bin/check_faf.sh
