@@ -1,0 +1,10 @@
+Articulatory feature extraction for training neural networks
+
+1. Download the af_feat directory in preferably the $FESTVOXDIR/src/ dir as af_feat
+2. mkdir cmu_us_rms
+3. $FESTVOXDIR/src/af_feat/setup_AF_extract
+4. copy wav and text
+5. ./bin/dump_AF_world_feats UTT/FRAME depending on if you want framewise or uttwise
+
+Acoustic WORLD feats saved in binary_af_feats as .cmp files dim 199
+Articulator features saved in binary_af_feats as .af for UTT and .faf for framewise dim 77 see featnames for description of features
