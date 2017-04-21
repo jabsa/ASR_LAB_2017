@@ -49,7 +49,7 @@ def make_binary(outdir, infile, phonefile):
         for line in f:
             feat_list=line.strip().split()
             for feat, list_name in enumerate(features):
-                print "DEBUG: ", list_name, feat_list[feat],
+                #print "DEBUG: ", list_name, feat_list[feat],
                 final_list.extend(get_element(feat_list[feat], list_name))
             final_mat.append(final_list)
             print(len(final_list))
