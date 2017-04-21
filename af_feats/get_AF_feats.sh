@@ -7,5 +7,5 @@ $ESTDIR/../festival/examples/dumpfeats -relation Segment -feats etc/featnames fe
 
 for file in `cat etc/filelist`;
 do
-    python ./bin/repeat_vector.py $file
+    python ./bin/repeat_feat.py $file
 done
