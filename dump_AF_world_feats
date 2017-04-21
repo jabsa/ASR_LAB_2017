@@ -33,9 +33,7 @@
 ###########################################################################
 ##  Generic build all, clustergen voice script -- Modified to dump aligned WORLD feats for training merlin models.                           ##
 ###########################################################################
-
-NAME=$1
-PARALLEL=
+type=$1 #framewise or uttwise
 PARALLEL=parallel
 
 # Initial labeling
@@ -58,7 +56,7 @@ echo "Dumping aligned linguistic and WORLD feats in festival/coeffs"
 ./bin/do_clustergen $PARALLEL dump_feat etc/txt.done.data
 
 # Dump Binary feats
-echo "Converting dumped linguistic feats to binary in ss_dnn/data/binary_label_LAB_DIM"
-./bin/make_bin_feats.sh
-echo "Converting dumped WORLD feats to binary in ss_dnn/data/{MGC,BAP,LF0}"
+echo "Converting dumped linguistic feats to binary in binary_af_feats"
+./bin/make_af_bin_feats.sh $type
+echo "Converting dumped WORLD feats to binary in binary_af_feats/{MGC,BAP,LF0}"
 ./bin/make_world_bin_feats.sh

@@ -2,7 +2,7 @@
 # Note the features are in reverse order when read in, and are reversed and put in the right order when written out.
 SPTK_BINDIR=$SPTKDIR/bin
 SOURCE_DIR=festival/rev_world_coeffs
-TARGET_DIR=ss_dnn/data
+TARGET_DIR=binary_af_feats/
 MGC_DIR=${TARGET_DIR}/mgc
 BAP_DIR=${TARGET_DIR}/bap
 LF0_DIR=${TARGET_DIR}/lf0
@@ -39,8 +39,3 @@ for i in festival/coeffs/*.mcep;
      rm tmp*
      done
 
-
-   mkdir ss_dnn/data/ref_data2
-   cp ss_dnn/data/mgc/* ss_dnn/data/ref_data2
-   cp ss_dnn/data/bap/* ss_dnn/data/ref_data2
-   cp ss_dnn/data/lf0/* ss_dnn/data/ref_data2
