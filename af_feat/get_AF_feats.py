@@ -22,7 +22,7 @@ def repeat_vec(filename):
     
     for line in reversed(open('festival/coeffs/' + filename + '.feats').readlines()):
 	phone=line.strip().split()[0].split('_')[0]
-	print phone, curr_phone
+	#print "DEBUG:" phone, curr_phone
 	
         if phone <> curr_phone :
 	    phone_num += 1

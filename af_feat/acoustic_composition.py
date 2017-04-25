@@ -18,7 +18,7 @@ def prepare_file_path_list(file_id_list, file_dir, file_extension, new_dir_switc
 
 
 def do_acoustic_composition(main_path, n_output_dim=199):
-    print('Extracting acoustic delta features and doing normalisation')
+    print('Extracting acoustic delta features and composing WORLD feats as a single vector')
     delta_win = [-0.5, 0.0, 0.5]
     acc_win = [1.0, -2.0, 1.0]
 
@@ -37,7 +37,7 @@ def do_acoustic_composition(main_path, n_output_dim=199):
     in_file_list_dict={}
     for feature_name in in_dir_dict.keys():
         in_file_list_dict[feature_name] = prepare_file_path_list(all_list, in_dir_dict[feature_name],ext_dict[feature_name], False)
-        print(len(in_file_list_dict[feature_name]))
+        #print(len(in_file_list_dict[feature_name]))
 
     out_file_list = prepare_file_path_list(all_list, comp_output_dir ,'.cmp', False)
     acoustic_worker = AcousticComposition(delta_win = delta_win, acc_win = acc_win)
