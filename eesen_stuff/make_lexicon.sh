@@ -17,7 +17,7 @@ cat feats_for_dict/*.word > etc/all.word
 
 
 #Create the AF-to phone map and the corresponding units for each AF
-cat etc/featnames_indic|awk '{print $1}'|tail -n +2|cut -d '_' -f2|sed '/^$/d'>etc/aflistcat ${VOXNAME}_phoneset.scm|grep "-"|awk '{if (NF>12) print $0}'|sed 's+[(,)]++g'|sed 's/^[ \t]*//g' >etc/phone_feats
+cat etc/featnames_indic|awk '{print $1}'|tail -n +2|cut -d '_' -f2|sed '/^$/d'>etc/aflist
 cat festvox/${VOXNAME}_phoneset.scm|grep "-"|awk '{if (NF>12) print $0}'|sed 's+[()]++g'|sed 's/^[ \t]*//g' >etc/phone_feats
 count=2
 for i in `cat etc/aflist`; 
@@ -36,6 +36,6 @@ cat etc/txt.done.data|cut -d '(' -f2-|cut -d ')' -f1|sed 's+"++g'|tr -s '[:space
 
 cat etc/txt.done.data|awk '{print $2}' >etc/filelist
 cat etc/filelist|sed 's+^+/data/ASR1/tools/sox-14.4.2/src/sox /home/pbaljeka/multilingual_wavs/hindi/+g'|sed 's/$/.wav -t wav - |/g'>etc/wavscp
-paste -d etc/filelist etc/filelist >eesen_utils/train/utt2spk
-paste -d etc/filelist etc/filelist >eesen_utils/train/spk2utt
-paste -d etc/filelist etc/wavscp >eesen_utils/train/wav.scp
+paste -d ' ' etc/filelist etc/filelist >eesen_utils/train/utt2spk
+paste -d ' ' etc/filelist etc/filelist >eesen_utils/train/spk2utt
+paste -d ' ' etc/filelist etc/wavscp >eesen_utils/train/wav.scp
